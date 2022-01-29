@@ -1,2 +1,2 @@
-export * from './AxiosHttpClient'
+export * from './Axios'
 export * from './interfaces'
