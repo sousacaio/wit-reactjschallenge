@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Param } from '../Services/Calculator/interfaces';
 import Calculator from '../Services/Calculator/Calculator';
+import { successModal } from '../Helpers/Modals';
 
 interface IOperation {
     operationType: 'sum' | 'div' | 'sub' | 'multi'
@@ -16,18 +17,23 @@ export const Forms: React.FC<IOperation> = (props) => {
 
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+
         event.preventDefault();
+
         const data = new FormData(event.currentTarget);
 
         let params: Param = {
             a: data.get('a')?.toString(),
             b: data.get('b')?.toString()
         }
-        await new Calculator().execute(params, operationType)
+
+        const result = await new Calculator().execute(params, operationType)
+        
+        await successModal({ text: result.data.message, title: 'Success!' })
     };
 
     return (
-        <Container component="main" maxWidth="xs" >
+        <Container component="main" maxWidth="xl" style={{ display: 'flex', justifyContent: 'center' }} >
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, display: 'flex', flexDirection: 'row', gap: 1 }}>
                 <TextField
                     margin="normal"

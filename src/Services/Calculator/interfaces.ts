@@ -4,5 +4,5 @@ export interface Param {
     b: any,
 }
 export interface CalculateOperation {
-    execute(parameters: Param, operationType: string): Promise<void>,
+    execute(parameters: Param, operationType: string): Promise<any>,
 }
