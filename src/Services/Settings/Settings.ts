@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 import { Settings as Configs } from "../../Settings/index";
-import { ISettings, ISettingsReturn } from './interfaces';
+import { ISettings } from './interfaces';
 
 axios.defaults.baseURL = Configs.backend_endpoint
 
