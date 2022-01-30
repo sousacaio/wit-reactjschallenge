@@ -10,31 +10,31 @@ export const mainListItems = (
     <div>
         <ListItem button>
             <ListItemIcon>
-                <Link to="/dashboard">
-                    <DashboardIcon />
-                </Link>
+                <Link to="/dashboard" style={{ all: 'unset' }}>
+                    <DashboardIcon color="primary" />
+                </Link >
             </ListItemIcon>
-            <Link to="/dashboard">
+            <Link to="/dashboard" style={{ all: 'unset' }}>
                 <ListItemText primary="Dashboard" />
             </Link>
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <Link to="/operations">
-                    <CalculateIcon />
+                <Link to="/operations" style={{ all: 'unset' }}>
+                    <CalculateIcon color="primary" />
                 </Link>
             </ListItemIcon>
-            <Link to="/operations">
+            <Link to="/operations" style={{ all: 'unset' }}>
                 <ListItemText primary="Operations" />
             </Link>
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <Link to="/settings">
-                    <SettingsIcon />
+                <Link to="/settings" style={{ all: 'unset' }}>
+                    <SettingsIcon  color="primary"/>
                 </Link>
             </ListItemIcon>
-            <Link to="/settings">
+            <Link to="/settings" style={{ all: 'unset' }}>
                 <ListItemText primary="Settings" />
             </Link>
         </ListItem>
