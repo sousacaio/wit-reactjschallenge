@@ -8,7 +8,7 @@ export default class Calculator implements CalculateOperation {
         let _id = localStorage.getItem('settingsId') as string | number | boolean
         return await axios.request({
             method: 'POST',
-            url: operationType,
+            url: 'calculate/' + operationType,
             data: parameters,
             headers: { _id }
         })
