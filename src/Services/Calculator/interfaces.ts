@@ -1,11 +1,8 @@
+export type Parameter = string | Blob 
 export interface Param {
-    a: number,
-    b: number,
+    a: any,
+    b: any,
 }
-
-export interface ICalculator {
-    sum(parameters: Param): any,
-    div(parameters: Param): any,
-    multi(parameters: Param): any,
-    sub(parameters: Param): any,
+export interface CalculateOperation {
+    execute(parameters: Param, operationType: string): Promise<void>,
 }
