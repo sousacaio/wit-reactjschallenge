@@ -1,16 +1,15 @@
-import { ICalculator, Param } from "./interfaces";
+import { CalculateOperation, Param } from "./interfaces";
+import axios, { AxiosError, AxiosResponse } from 'axios'
+import { Settings } from "../../Settings/index";
 
-export default class Calculator implements ICalculator {
-    sum(parameters: Param) {
-        throw new Error("Method not implemented.");
-    }
-    div(parameters: Param) {
-        throw new Error("Method not implemented.");
-    }
-    multi(parameters: Param) {
-        throw new Error("Method not implemented.");
-    }
-    sub(parameters: Param) {
-        throw new Error("Method not implemented.");
+
+axios.defaults.baseURL = Settings.backend_endpoint
+export default class Calculator implements CalculateOperation {
+    async execute(parameters: Param, operationType: string): Promise<AxiosResponse<{ body: { result: number } }>> {
+        return await axios.request({
+            method: 'POST',
+            url: operationType,
+            data: parameters,
+        })
     }
 }

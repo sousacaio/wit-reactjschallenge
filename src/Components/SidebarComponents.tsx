@@ -2,23 +2,31 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import PeopleIcon from '@mui/icons-material/People';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { Link } from 'react-router-dom';
 
 export const mainListItems = (
     <div>
         <ListItem button>
             <ListItemIcon>
-                <DashboardIcon />
+                <Link to="/dashboard">
+                    <DashboardIcon />
+                </Link>
             </ListItemIcon>
-            <ListItemText primary="Dashboard" />
+            <Link to="/dashboard">
+                <ListItemText primary="Dashboard" />
+            </Link>
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <CalculateIcon />
+                <Link to="/operations">
+                    <CalculateIcon />
+                </Link>
             </ListItemIcon>
-            <ListItemText primary="Operations" />
+            <Link to="/operations">
+                <ListItemText primary="Operations" />
+            </Link>
         </ListItem>
         <ListItem button>
             <ListItemIcon>
