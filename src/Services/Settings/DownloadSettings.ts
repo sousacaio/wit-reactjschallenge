@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import axios, { AxiosError } from 'axios'
 import { successModal } from '../../Helpers/Modals';
 import { Settings as Configs } from "../../Settings/index";
 
@@ -19,7 +19,7 @@ export default class DownloadSettings {
             document.body.appendChild(link);
             link.click();            
         } catch (error: any | AxiosError) {            
-            if (error.response.status == 404) {
+            if (error.response.status === 404) {
                 await successModal({ text: 'Logfile does not exists yet!', title: 'Your operation gone wrong!' })
             }
         }
