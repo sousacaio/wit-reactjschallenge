@@ -86,9 +86,10 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export const Wrapper: React.FC<ParentCompProps> = (props) => {
     const { childComp } = props;
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
+
     const toggleDrawer = () => {
-        setOpen(!open);
+        setOpen(!open);  
     };
 
     return (
@@ -156,7 +157,7 @@ export const Wrapper: React.FC<ParentCompProps> = (props) => {
                 <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                     <Grid container spacing={3}>{childComp}</Grid>
                 </Container>
-                <Container maxWidth="lg" style={{ position: 'fixed', bottom: 0, margin:'auto' }}>
+                <Container maxWidth="lg" style={{ position: 'fixed', bottom: 0, margin: 'auto' }}>
                     <Copyright sx={{ pt: 4 }} />
                 </Container>
             </Box>
