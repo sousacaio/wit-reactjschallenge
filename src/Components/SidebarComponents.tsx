@@ -30,9 +30,13 @@ export const mainListItems = (
         </ListItem>
         <ListItem button>
             <ListItemIcon>
-                <SettingsIcon />
+                <Link to="/settings">
+                    <SettingsIcon />
+                </Link>
             </ListItemIcon>
-            <ListItemText primary="Settings" />
+            <Link to="/settings">
+                <ListItemText primary="Settings" />
+            </Link>
         </ListItem>
     </div>
 );
