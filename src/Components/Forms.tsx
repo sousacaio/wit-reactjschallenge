@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Param } from '../Services/Calculator/interfaces';
+import Calculator from '../Services/Calculator/Calculator';
 
 interface IOperation {
     operationType: 'sum' | 'div' | 'sub' | 'multi'
@@ -14,15 +15,15 @@ export const Forms: React.FC<IOperation> = (props) => {
     const { operationType } = props
 
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
 
         let params: Param = {
-            a: Number(data.get('a')),
-            b: Number(data.get('b'))
+            a: data.get('a')?.toString(),
+            b: data.get('b')?.toString()
         }
-
+        await new Calculator().execute(params, operationType)
     };
 
     return (
