@@ -29,7 +29,7 @@ export const Forms: React.FC<IOperation> = (props) => {
 
         const result = await new Calculator().execute(params, operationType)
         
-        await successModal({ text: result.data.message, title: 'Success!' })
+        await successModal({ text: result.data.body.result.toString(), title: 'Success!' })
     };
 
     return (

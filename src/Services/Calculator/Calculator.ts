@@ -5,7 +5,7 @@ import { Settings } from "../../Settings/index";
 
 axios.defaults.baseURL = Settings.backend_endpoint
 export default class Calculator implements CalculateOperation {
-    async execute(parameters: Param, operationType: string): Promise<AxiosResponse<{ message: string }>> {
+    async execute(parameters: Param, operationType: string): Promise<AxiosResponse<{ body: { result: number } }>> {
         return await axios.request({
             method: 'POST',
             url: operationType,
