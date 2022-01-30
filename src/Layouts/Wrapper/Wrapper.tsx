@@ -156,7 +156,9 @@ export const Wrapper: React.FC<ParentCompProps> = (props) => {
                 <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                     <Grid container spacing={3}>{childComp}</Grid>
                 </Container>
-                <Copyright sx={{ pt: 4 }} />
+                <Container maxWidth="lg" style={{ position: 'fixed', bottom: 0, margin:'auto' }}>
+                    <Copyright sx={{ pt: 4 }} />
+                </Container>
             </Box>
         </Box>
     );
