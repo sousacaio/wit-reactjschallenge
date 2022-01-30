@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import OperationsRoute from './Routes/OperationsRoute';
 import DashboardRoute from './Routes/DashboardRoute';
+import SettingsRoute from './Routes/SettingsRoute';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.render(
       <Routes >
         <Route path="/dashboard" element={<DashboardRoute />} />
         <Route path="/operations" element={<OperationsRoute />} />
+        <Route path="/settings" element={<SettingsRoute />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
