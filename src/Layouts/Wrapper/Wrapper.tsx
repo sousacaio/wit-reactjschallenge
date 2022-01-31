@@ -89,7 +89,7 @@ export const Wrapper: React.FC<ParentCompProps> = (props) => {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = () => {
-        setOpen(!open);  
+        setOpen(!open);
     };
 
     return (
@@ -155,7 +155,7 @@ export const Wrapper: React.FC<ParentCompProps> = (props) => {
             >
                 <Toolbar />
                 <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                    <Grid container spacing={3}>{childComp}</Grid>
+                    <Grid container spacing={1}>{childComp}</Grid>
                 </Container>
                 <Container maxWidth="lg" style={{ position: 'fixed', bottom: 0, margin: 'auto' }}>
                     <Copyright sx={{ pt: 4 }} />
