@@ -9,7 +9,7 @@ export default class DownloadSettings {
         try {
             const result = await axios.request({
                 method: 'GET',
-                url: 'settings/download',
+                url: 'download-settings/',
                 responseType: 'blob'
             })
             const url = window.URL.createObjectURL(new Blob([result.data]))
@@ -17,8 +17,8 @@ export default class DownloadSettings {
             link.href = url;
             link.setAttribute('download', 'logfile.csv');
             document.body.appendChild(link);
-            link.click();            
-        } catch (error: any | AxiosError) {            
+            link.click();
+        } catch (error: any | AxiosError) {
             if (error.response.status === 404) {
                 await successModal({ text: 'Logfile does not exists yet!', title: 'Your operation gone wrong!' })
             }

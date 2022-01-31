@@ -1,6 +1,7 @@
 import { Grid, FormControlLabel, Checkbox, Button } from "@mui/material";
 import React, { useEffect } from "react";
 import { successModal } from "../Helpers/Modals";
+import PrepareDownload from "../Services/Settings/PrepareDownload";
 import DownloadSettings from "../Services/Settings/DownloadSettings";
 import GetSettings from "../Services/Settings/GetSettings";
 import Settings from "../Services/Settings/Settings";
@@ -12,12 +13,16 @@ export const SettingsForm: React.FunctionComponent<Props> = props => {
 
     const submitSettings = async () => {
         setLogStatus(!logStatus)
-        await new Settings().execute({ logStatus:!logStatus })
+        await new Settings().execute({ logStatus: !logStatus })
         await successModal({ text: 'Settings updated', title: 'Success!' })
     }
 
     const downloadCsvFile = async () => {
-        await new DownloadSettings().execute()
+        await new PrepareDownload().execute()
+        setTimeout(async () => {
+            await new DownloadSettings().execute()
+        }, 2000)
+
     }
 
     const lookupForSettings = async () => {
@@ -30,7 +35,7 @@ export const SettingsForm: React.FunctionComponent<Props> = props => {
         return function cleanup() {
 
         };
-    },[]);
+    }, []);
 
     return (<Grid item xs={12}>
         <FormControlLabel
