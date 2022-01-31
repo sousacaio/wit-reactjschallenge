@@ -1,21 +1,29 @@
-export interface IDashboard {
-    body: {
-        result: IOperations[] | null,
-        lengths: {
-            sum: number,
-            multi: number,
-            divs: number,
-            subs: number,
-        } | null
+export interface IDashboardData {
+    result: IOperations[],
+    lengths: {
+        sum: number,
+        multi: number,
+        divs: number,
+        subs: number,
+    } 
+}
+export interface IDashboarResult {
+    result: IOperations[],
+    lengths: {
+        sum: number,
+        multi: number,
+        divs: number,
+        subs: number,
     }
 }
-
 export interface IOperations {
-    _id: string
+    _id?: string
     parameters: {
-        a: number,
-        b: number
+        firstArgument: number,
+        secondArgument: number
     };
-    operationType: string,
-    result: number
+    operationType?: string,
+    result?: number,
+    createdAt?: Date,
+    updatedAt?: Date
 }
