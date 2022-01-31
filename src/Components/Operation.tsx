@@ -1,7 +1,7 @@
 import React from "react";
 import { Forms } from "./Forms";
 
-export const Operations: React.FC<any> = (props) => {
+export const Operations: React.FC<any> = () => {
     return <>
         <Forms operationType="sum" />
         <Forms operationType="sub" />
